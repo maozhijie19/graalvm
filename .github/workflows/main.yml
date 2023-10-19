@@ -35,6 +35,10 @@ jobs:
         if: runner.os == 'Linux' || runner.os == 'macOS' 
         run: mv helloworld helloworld-${{ matrix.os }}
 
+      - name: Rename Files
+        if: runner.os == 'Windows'
+        run: ren helloworld.exe helloworld-${{ matrix.os }}.exe
+
       - name: List Files
         if: runner.os == 'Linux' || runner.os == 'macOS' 
         run: ls -l
