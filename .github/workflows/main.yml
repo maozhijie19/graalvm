@@ -1,5 +1,7 @@
 name: GraalVM Native Image builds
-on: [published]
+on:
+    release:
+        types: [ published ]
 jobs:
   build:
     permissions: write-all
