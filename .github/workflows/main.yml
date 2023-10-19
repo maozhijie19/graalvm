@@ -30,6 +30,9 @@ jobs:
         with:
           name: helloworld-${{ matrix.os }}
           path: helloworld*
+
+      - name: Rename Files
+        run: mv helloworld helloworld-${{ matrix.os }}
           
       - name: List Files
         run: ls -l
